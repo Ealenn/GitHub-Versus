@@ -1,8 +1,11 @@
+/* EmptyRepo */
+let EmptyRepo = require('../config/EmptyRepo')
+
 /* API GitHub */
-let github = require('../config/Github');
+let github = require('../config/Github')
 
 /* Memcached */
-let mc = require('../config/Memcached');
+let mc = require('../config/Memcached')
 
 
 module.exports = {
@@ -51,18 +54,7 @@ module.exports = {
                     result.error = {}
                 } catch (e) 
                 {
-                    result.name = 'undefined'
-                    result.full_name = 'undefined'
-                    result.url = 'undefined'
-                    result.description = 'undefined'
-                    result.created_at = 'undefined'
-                    result.updated_at = 'undefined'
-                    result.stars = 0
-                    result.watchers = 0
-                    result.language = 'undefined'
-                    result.forks = 0
-                    result.open_issues = 0
-                    result.score = 0
+                    result = EmptyRepo
                     result.error = e
                 }
 
