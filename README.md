@@ -17,4 +17,3 @@ Easily compare two GitHub repositories
 
 ## Todo
 - Display live data (Charts)
-- Add MomentJS

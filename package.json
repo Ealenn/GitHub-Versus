@@ -24,6 +24,7 @@
     "express-controller": "^0.3.2",
     "github": "^9.2.0",
     "memjs": "^0.10.0",
+    "moment": "^2.18.0",
     "vue": "^2.2.4",
     "vue-loader": "^11.1.4"
   },

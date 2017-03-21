@@ -24,13 +24,13 @@
                     </div>
 
                     <div class="ui card" style="width: 100%!important;">
-                    <div class="ui active dimmer" style="display: none" id="first_repo_loading">
+                    <div class="ui active dimmer" v-if="first_repo_update">
                         <div class="ui loader"></div>
                     </div>
                     <div class="content">
                         <div class="header">{{first_repo.name}}</div>
                         <div class="meta">
-                            <span class="right floated time">{{first_repo.updated_at}}</span>
+                            <span class="right floated time" v-if="first_repo.updated_at"><i class="refresh icon"></i> {{first_repo.updated_at | moment}}</span>
                             <span class="category">{{first_repo.full_name}}</span>
                         </div>
                         <div class="description">
@@ -87,13 +87,13 @@
                     </div>
 
                     <div class="ui card" style="width: 100%!important;">
-                    <div class="ui active dimmer" style="display: none" id="second_repo_loading">
+                    <div class="ui active dimmer" v-if="second_repo_update">
                         <div class="ui loader"></div>
                     </div>
                     <div class="content">
                         <div class="header">{{second_repo.name}}</div>
                         <div class="meta">
-                            <span class="right floated time">{{second_repo.updated_at}}</span>
+                            <span class="right floated time" v-if="second_repo.updated_at"><i class="refresh icon"></i> {{second_repo.updated_at | moment}}</span>
                             <span class="category">{{second_repo.full_name}}</span>
                         </div>
                         <div class="description">

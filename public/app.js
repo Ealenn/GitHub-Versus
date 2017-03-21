@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
+import Momentjs from 'moment'
 import EmptyRepo from '../config/EmptyRepo'
 
 var app = new Vue({
@@ -8,7 +9,14 @@ var app = new Vue({
     first_repo_term: '',
     second_repo_term: '',
     first_repo: EmptyRepo,
-    second_repo: EmptyRepo
+    second_repo: EmptyRepo,
+    first_repo_update: false,
+    second_repo_update: false
+  },
+  filters: {
+    moment: function (date) {
+      return Momentjs(date).fromNow();
+    }
   },
   methods: {
     refresh: function (isFirst, event) {
@@ -17,10 +25,10 @@ var app = new Vue({
       /* Term */
       var term = ''
       if(isFirst) {
-        $('#first_repo_loading').attr('style', 'display:bloc')
+        this.first_repo_update = true
         term = this.first_repo_term 
       } else {
-        $('#second_repo_loading').attr('style', 'display:bloc')
+        this.second_repo_update = true
         term = this.second_repo_term
       }
 
@@ -28,10 +36,10 @@ var app = new Vue({
       axios.get('/api/' + term)
         .then(function (response) {
           if(isFirst){
-            $('#first_repo_loading').attr('style', 'display:none')
+            this.first_repo_update = false
             this.first_repo = response.data
           } else {
-            $('#second_repo_loading').attr('style', 'display:none')
+            this.second_repo_update = false
             this.second_repo = response.data
           }
 
