@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GitHub Versus</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" integrity="sha256-lCqHBvboFPu7gyEswcz5UdbXKyB6FDOtfbOeMvUEfkY=" crossorigin="anonymous" />
+    </head>
+    <body>
+        <div id="app">
+            <h2 class="ui center aligned icon header" style="margin-top:15px">
+                <i class="circular github alternate icon"></i>
+                GitHub Versus
+            </h2>
+
+            <div class="ui divider"></div>
+
+            <div class="ui three column doubling stackable grid container">
+                <div class="column">
+
+                    <div class="ui form">
+                        <div class="field">
+                            <label>First repository</label>
+                            <input v-model="first_repo_term" v-on:keyup.13="refresh(true, $event)" type="text" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="ui card" style="width: 100%!important;">
+                    <div class="ui active dimmer" style="display: none" id="first_repo_loading">
+                        <div class="ui loader"></div>
+                    </div>
+                    <div class="content">
+                        <div class="header">{{first_repo.name}}</div>
+                        <div class="meta">
+                            <span class="right floated time">{{first_repo.updated_at}}</span>
+                            <span class="category">{{first_repo.full_name}}</span>
+                        </div>
+                        <div class="description">
+
+                            <div v-if="first_repo.watchers != 0">
+                                <div class="row centered row" style="text-align: center;">
+                                    <div class="ui mini statistic">
+                                        <div class="value">{{first_repo.stars}}</div>
+                                        <div class="label">Stars</div>
+                                    </div>
+
+                                    <div class="ui mini statistic">
+                                        <div class="value">{{first_repo.watchers}}</div>
+                                        <div class="label">Watchers</div>
+                                    </div>
+                                </div>
+
+                                <div class="row centered row" style="text-align: center;">
+                                    <div class="ui mini statistic">
+                                        <div class="value">{{first_repo.forks}}</div>
+                                        <div class="label">Forks</div>
+                                    </div>
+
+                                    <div class="ui mini statistic">
+                                        <div class="value">{{first_repo.open_issues}}</div>
+                                        <div class="label">Open Issues</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>{{first_repo.description}}</p>
+                            <p><a :href="first_repo.url">{{first_repo.url}}</a></p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="right floated">
+                            {{first_repo.language}}
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="column">
+
+                </div>
+
+                <div class="column">
+
+                    <div class="ui form">
+                        <div class="field">
+                            <label>Second repository</label>
+                            <input v-model="second_repo_term" v-on:keyup.13="refresh(false, $event)" type="text" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="ui card" style="width: 100%!important;">
+                    <div class="ui active dimmer" style="display: none" id="second_repo_loading">
+                        <div class="ui loader"></div>
+                    </div>
+                    <div class="content">
+                        <div class="header">{{second_repo.name}}</div>
+                        <div class="meta">
+                            <span class="right floated time">{{second_repo.updated_at}}</span>
+                            <span class="category">{{second_repo.full_name}}</span>
+                        </div>
+                        <div class="description">
+
+                            <div v-if="second_repo.watchers != 0">
+                                <div class="row centered row" style="text-align: center;">
+                                    <div class="ui mini statistic">
+                                        <div class="value">{{second_repo.stars}}</div>
+                                        <div class="label">Stars</div>
+                                    </div>
+
+                                    <div class="ui mini statistic">
+                                        <div class="value">{{second_repo.watchers}}</div>
+                                        <div class="label">Watchers</div>
+                                    </div>
+                                </div>
+
+                                <div class="row centered row" style="text-align: center;">
+                                    <div class="ui mini statistic">
+                                        <div class="value">{{second_repo.forks}}</div>
+                                        <div class="label">Forks</div>
+                                    </div>
+
+                                    <div class="ui mini statistic">
+                                        <div class="value">{{second_repo.open_issues}}</div>
+                                        <div class="label">Open Issues</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>{{second_repo.description}}</p>
+                            <p><a :href="second_repo.url">{{second_repo.url}}</a></p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="right floated author">
+                            {{second_repo.language}}
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js" integrity="sha256-mq9Ru97qzOm1x5zeYFfPniWgQP9tEmjo3O4jUEJdjNY=" crossorigin="anonymous"></script>
+        <script src="/assets/bundle.js"></script>
+    </body>
+</html>

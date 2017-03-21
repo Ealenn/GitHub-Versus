@@ -1,0 +1,9 @@
+{
+    "name": "API",
+    "description": "",
+    "version": "1.0.0",
+    "url": "",
+    "options": {
+        "outdir": "./API/"
+    }
+}

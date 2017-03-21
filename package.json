@@ -1,0 +1,36 @@
+{
+  "name": "github-versus",
+  "version": "1.0.0",
+  "engines": {
+    "node": "7.4.0"
+  },
+  "description": "Github Versus",
+  "main": "serveur.js",
+  "scripts": {
+    "start": "node serveur.js",
+    "dev": "nodemon serveur.js",
+    "docs": "yuidoc .",
+    "webpack-dev": "webpack-dev-server",
+    "preinstall": "npm install -g webpack",
+    "postinstall": "webpack --config webpack.config.js"
+  },
+  "repository": "https://github.com/Ealenn/GitHub-Versus",
+  "author": "Rudy Marchandise",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "bluebird": "^3.5.0",
+    "express": "^4.15.2",
+    "express-controller": "^0.3.2",
+    "github": "^9.2.0",
+    "memjs": "^0.10.0",
+    "vue": "^2.2.4",
+    "vue-loader": "^11.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2",
+    "yuidocjs": "^0.10.2"
+  }
+}
