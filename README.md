@@ -15,5 +15,17 @@ Easily compare two GitHub repositories
 - Webpack https://www.npmjs.com/package/webpack Webpack is a bundler for modules
 - YUIDoc's http://yui.github.io/yuidoc/ YUIDoc is a Node.js application that generates API documentation
 
+## Hot Reloading
+```bash
+$ yarn install
+$ yarn run dev
+$ yarn run webpack-dev
+```
+
+In index.html
+```html
+<script src="//localhost:8080/bundle.js"></script>
+```
+
 ## Todo
 - Display live data (Charts)
