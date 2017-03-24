@@ -35,6 +35,7 @@
                                     ></i-count-up>
                             </div>
                             <div class="label">Stars</div>
+                            <diff :me="repo" key-diff="stars"></diff>
                         </div>
                     </div>
                     <div class="four wide column">
@@ -48,6 +49,7 @@
                                 ></i-count-up>
                             </div>
                             <div class="label">Watchers</div>
+                            <diff :me="repo" key-diff="watchers"></diff>
                         </div>
                     </div>
                     <div class="four wide column">
@@ -61,6 +63,7 @@
                                     ></i-count-up>
                             </div>
                             <div class="label">Forks</div>
+                            <diff :me="repo" key-diff="forks"></diff>
                         </div>
                     </div>
                     <div class="four wide column">
@@ -74,11 +77,12 @@
                                     ></i-count-up>
                             </div>
                             <div class="label">Open Issues</div>
+                            <diff :me="repo" key-diff="open_issues"></diff>
                         </div>
                     </div>
                 </div>
 
-
+                <div class="ui horizontal divider"></div>
                 <p>{{repo.description}}</p>
                 <p><a :href="repo.url">{{repo.url}}</a></p>
             </div>
@@ -100,12 +104,14 @@ import Momentjs from 'moment'
 import EmptyRepo from '../../config/EmptyRepo'
 
 import ICountUp from 'vue-countup-v2';
+import Diff from '../components/Diff.vue';
 
 export default {
   name: 'preview',
   props: ['title'],
   components: {
-    ICountUp
+    ICountUp,
+    Diff
   },
   data() {
       return {

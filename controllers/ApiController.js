@@ -32,7 +32,6 @@ module.exports = {
         var get_github = function(key, call){
             github.search.repos({
                 q: key,
-                sort: "stars",
                 per_page: 1
             }, function(github_err, github_res) {
 
